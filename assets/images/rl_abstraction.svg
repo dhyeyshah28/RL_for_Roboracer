@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5d6b7a"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="220" fill="#ffffff"/>
+
+  <!-- Policy box -->
+  <rect x="60" y="45" width="300" height="130" rx="20" fill="#f3effb" stroke="#B39DDB" stroke-width="2"/>
+  <text x="210" y="85" text-anchor="middle" font-size="19" font-weight="800" fill="#002d72">Policy</text>
+  <text x="210" y="112" text-anchor="middle" font-size="16" fill="#1c2430">&#960;&#952; : o &#8594; a</text>
+  <text x="210" y="139" text-anchor="middle" font-size="13" fill="#5d6b7a">neural network over LiDAR scans,</text>
+  <text x="210" y="157" text-anchor="middle" font-size="13" fill="#5d6b7a">odometry and track features</text>
+
+  <!-- Environment box -->
+  <rect x="540" y="45" width="300" height="130" rx="20" fill="#e9f7f1" stroke="#00a676" stroke-width="2"/>
+  <text x="690" y="85" text-anchor="middle" font-size="19" font-weight="800" fill="#002d72">Roboracer</text>
+  <text x="690" y="112" text-anchor="middle" font-size="16" fill="#1c2430">s&#8320; &#8321; = f(s&#8348;, a&#8348;)</text>
+  <text x="690" y="139" text-anchor="middle" font-size="13" fill="#5d6b7a">simulator (gym) and 1:10 scale</text>
+  <text x="690" y="157" text-anchor="middle" font-size="13" fill="#5d6b7a">vehicle on the physical track</text>
+
+  <!-- action arrow -->
+  <path d="M 365 83 L 535 83" stroke="#5d6b7a" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="450" y="73" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1c2430">action a&#8348;</text>
+  <text x="450" y="104" text-anchor="middle" font-size="12.5" fill="#5d6b7a">steering angle, speed</text>
+
+  <!-- observation arrow -->
+  <path d="M 535 141 L 365 141" stroke="#5d6b7a" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="450" y="131" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1c2430">observation o&#8348;, reward r&#8348;</text>
+  <text x="450" y="162" text-anchor="middle" font-size="12.5" fill="#5d6b7a">scan, pose, progress</text>
+</svg>

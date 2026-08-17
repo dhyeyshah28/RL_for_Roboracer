@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tutorial on Reinforcement Learning for Roboracer: autonomous racing from simulation to the physical 1:10 scale vehicle." />
+  <meta name="keywords" content="Reinforcement Learning, Roboracer, F1TENTH, Autonomous Racing, Sim-to-Real, Model Predictive Control, Robot Learning, ROS 2" />
+  <title>RL for Roboracer | Reinforcement Learning for Autonomous Racing</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  async>
+</script>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="#top">RL for Roboracer</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#recordings">Recordings</a>
+        <a href="#materials">Materials</a>
+        <a href="#speakers">Teaching Staff</a>
+        <a href="#setup">Setup</a>
+        <a href="#references">References</a>
+      </div>
+    </nav>
+
+    <section id="top" class="hero-content">
+      <p class="eyebrow">Roboracer Tutorial</p>
+      <h1>Reinforcement Learning for Roboracer</h1>
+      <p class="subtitle">
+        From simulation to the racetrack: a hands-on introduction to reinforcement learning for autonomous racing on the Roboracer (F1TENTH) 1:10 scale platform.
+      </p>
+      <div class="button-row">
+      <a class="button primary" href="#recordings">Watch recordings</a>
+      <a class="button" href="#materials">Slides &amp; Colab</a>
+      <a class="button"
+         href="https://github.com/YOUR-ORG/RL-for-Roboracer"
+         target="_blank"
+         rel="noopener">
+         GitHub
+      </a>
+    </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <h2>Overview</h2>
+      <p>
+        This course introduces reinforcement learning (RL) as a practical framework for autonomous racing on the Roboracer platform, treating learned
+        policies as a principled extension of classical planning and control rather than a replacement for them. We frame perception, planning, and control
+        as a single closed-loop decision problem in which a parametric policy maps raw LiDAR scans and odometry directly to steering and speed commands,
+        while vehicle dynamics, actuator limits, and track geometry enter as explicit domain priors. Content is organized into three progressive modules
+        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>RL for Everything</strong> &mdash; each shipped as a recorded
+        lecture, a slide deck, and one or more hands-on Colab notebooks, so participants build a policy from scratch, shape it into a competitive racer, and
+        see where RL fits alongside classical planning and control. Emphasis throughout is on reward design, domain randomization, and safety filtering, so
+        that learned policies remain data-efficient, robust, and deployable on the physical car at the limits of handling.
+      </p>
+
+
+            <h3>The Racing Decision Loop</h3>
+
+      <div class="graphical-abstract">
+    <img
+        src="assets/images/rl_abstraction.svg"
+        alt="Reinforcement learning loop for the Roboracer platform"
+    />
+
+    <p class="figure-caption">
+        Perception, planning, and control are collapsed into a single closed loop in which a learned policy,
+        domain priors from vehicle dynamics and track geometry, and a domain-aware reward are optimized end-to-end
+        against the simulator and then transferred to the physical vehicle.
+    </p>
+</div>
+
+
+ <div class="math-box">
+     \[
+\begin{aligned}
+\pi^\star({\color{#8BC34A}{\xi}})
+=
+\arg\max_{\pi\in\Pi}\;
+\mathbb{E}_{{\color{#8BC34A}{\xi}}}
+\Big[\textstyle\sum_{t=0}^{T}\gamma^{t}\,
+{\color{#E57373}{r}}(s_t,a_t,{\color{#8BC34A}{\xi}})\Big]
+\\[0.5em]
+\text{s.t.}\quad
+s_{t+1}=
+{\color{#64B5F6}{f}}(s_t,a_t,
+{\color{#8BC34A}{\xi}}),
+\quad
+{\color{#64B5F6}{c}}(s_t,a_t)
+\le 0
+\end{aligned}
+\]
+
+\[
+{\color{#B39DDB}{\pi_\theta}}
+:
+o_t
+\longmapsto
+a_t = (\delta_t,\, v_t)
+\]
+  </div>
+
+      <p class="abstraction-description">
+  Here,
+  \( {\color{#8BC34A}{\xi}} \)
+  denotes the sampled track layout, vehicle parameters, and opponent scenarios,
+  \( {\color{#E57373}{r}} \)
+  defines a domain-aware reward combining lap time, track progress, and collision penalties,
+  \( {\color{#64B5F6}{f}} \)
+  and
+  \( {\color{#64B5F6}{c}} \)
+  encode the vehicle dynamics and the safety and actuation constraints,
+  and
+  \( {\color{#B39DDB}{\pi_\theta}} \)
+  represents the learned policy mapping observations to steering angle and speed commands.
+</p>
+
+    </section>
+
+
+    <section id="roadmap" class="section alt">
+      <h2>How This Course Works</h2>
+      <p>
+        Every module ships as a recorded lecture, a slide deck, and one or more
+        Colab notebooks you run end to end in the browser, no local install or GPU required. Here is what to expect from each module.
+      </p>
+
+      <div class="timeline">
+        <div class="slot">
+          <div class="time">Step 1</div>
+          <div class="details">
+            <h3>Watch</h3>
+            <p>Start with the recorded lecture for the module. It builds the intuition &mdash; why the reward is shaped the way it is, why the observation looks the way it does &mdash; before you see a single line of code.</p>
+          </div>
+        </div>
+
+        <div class="slot">
+          <div class="time">Step 2</div>
+          <div class="details">
+            <h3>Read</h3>
+            <p>Skim the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook.</p>
+          </div>
+        </div>
+
+        <div class="slot">
+          <div class="time">Step 3</div>
+          <div class="details">
+            <h3>Run</h3>
+            <p>Open the module's Colab notebook and run every cell top to bottom. No ROS installation and no prior RL experience required &mdash; each notebook explains every concept as it introduces it, and trains a policy in well under an hour on a free Colab GPU.</p>
+          </div>
+        </div>
+
+        <div class="slot">
+          <div class="time">Step 4</div>
+          <div class="details">
+            <h3>Deploy</h3>
+            <p>From Module 2 onward, take the policy you trained in simulation and run it for real, as a ROS 2 node on the physical Roboracer car.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 3rem; text-align: center;">The Three Modules</h3>
+      <div class="cards three">
+        <article class="card module">
+          <div class="avatar">1</div>
+          <h3>Learn to Drive</h3>
+          <p>Train a policy from scratch, then with Stable-Baselines3, until the car laps without crashing.</p>
+          <ul>
+            <li>MDP formulation &amp; reward basics</li>
+            <li>PPO from scratch: actor-critic, GAE</li>
+            <li>Practical training with SB3</li>
+          </ul>
+        </article>
+
+        <article class="card module">
+          <div class="avatar">2</div>
+          <h3>Learn to Race</h3>
+          <p>Shape the reward for speed and smoothness, then deploy the policy on the real car.</p>
+          <ul>
+            <li>Reward shaping for fast, smooth laps</li>
+            <li>Sim-to-real transfer</li>
+            <li>ROS&nbsp;2 deployment on hardware</li>
+          </ul>
+        </article>
+
+        <article class="card module">
+          <div class="avatar">3</div>
+          <h3>RL for Everything</h3>
+          <p>See where RL fits alongside classical planning and control.</p>
+          <ul>
+            <li>Residual policies on classical controllers</li>
+            <li>Trajectory &amp; raceline optimization</li>
+            <li>Multi-agent racing</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="recordings" class="section alt">
+  <h2>Tutorial Recordings</h2>
+
+  <p>
+    Each module's lecture is recorded and posted here on YouTube.
+  </p>
+
+  <div class="cards three">
+
+    <article class="material">
+      <h3>Module 1: Learn to Drive</h3>
+
+      <!-- Replace the placeholder below with the embed once the recording is live:
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID_MODULE_1"
+        title="RL for Roboracer — Module 1: Learn to Drive"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      -->
+      <div class="video-placeholder">Recording coming soon</div>
+
+      <div class="link-row">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_MODULE_1"
+           target="_blank"
+           rel="noopener">
+          Watch on YouTube
+        </a>
+      </div>
+    </article>
+
+    <article class="material">
+      <h3>Module 2: Learn to Race</h3>
+
+      <!-- Replace the placeholder below with the embed once the recording is live:
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID_MODULE_2"
+        title="RL for Roboracer — Module 2: Learn to Race"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      -->
+      <div class="video-placeholder">Recording coming soon</div>
+
+      <div class="link-row">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID_MODULE_2"
+           target="_blank"
+           rel="noopener">
+          Watch on YouTube
+        </a>
+      </div>
+    </article>
+
+    <article class="material">
+      <h3>Module 3: RL for Everything</h3>
+
+      <div class="video-placeholder">Coming soon</div>
+
+      <div class="link-row">
+        <a href="https://www.youtube.com/@YOUR-CHANNEL"
+           target="_blank"
+           rel="noopener">
+          Course YouTube channel
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+    <section id="materials" class="section">
+      <h2>Slides and notebooks</h2>
+      <p>Tutorial slides and coding examples in Google Colab are available below.</p>
+
+      <div class="materials-grid">
+        <article class="material">
+          <h3>Module 1: Learn to Drive</h3>
+          <div class="link-row">
+            <a href="slides/module1_learn_to_drive.pdf">Slides</a>
+            <a href="https://colab.research.google.com/github/YOUR-ORG/RL-for-Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_part1_ppo_sb3/lec1_part1_ppo_sb3.ipynb" target="_blank" rel="noopener">Colab: Training with PPO (Stable-Baselines3)</a>
+            <a href="https://colab.research.google.com/github/YOUR-ORG/RL-for-Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_ppo_from_scratch/lec1_ppo_from_scratch.ipynb" target="_blank" rel="noopener">Colab: PPO From Scratch (Actor-Critic, GAE, Update Rule)</a>
+          </div>
+        </article>
+
+        <article class="material">
+          <h3>Module 2: Learn to Race</h3>
+          <div class="link-row">
+            <a href="slides/module2_learn_to_race.pdf">Slides</a>
+            <a href="https://colab.research.google.com/github/YOUR-ORG/RL-for-Roboracer/blob/main/notebooks/module2_learn_to_race/reward_shaping/reward_shaping.ipynb" target="_blank" rel="noopener">Colab: Reward Shaping for Racing</a>
+            <a href="https://github.com/YOUR-ORG/RL-for-Roboracer/blob/main/deployment/ppo_deploy_node.py" target="_blank" rel="noopener">ROS 2 Deployment Node (ppo_deploy_node.py)</a>
+          </div>
+        </article>
+
+        <article class="material">
+          <h3>Module 3: RL for Everything</h3>
+          <div class="link-row">
+            <span class="note">Slides and notebooks coming soon</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+   <section id="speakers" class="section alt">
+  <h2>Teaching Staff</h2>
+
+  <div class="cards three">
+
+    <article class="card speaker">
+      <img class="speaker-photo"
+           src="assets/images/speakers/placeholder.svg"
+           alt="Teaching staff member one headshot" />
+
+      <h3>Instructor One</h3>
+
+      <p class="speaker-affiliation">
+        Title<br>
+        Department<br>
+        Laboratory or Institute<br>
+        University
+      </p>
+    </article>
+
+    <article class="card speaker">
+      <img class="speaker-photo"
+           src="assets/images/speakers/placeholder.svg"
+           alt="Teaching staff member two headshot" />
+
+      <h3>Instructor Two</h3>
+
+      <p class="speaker-affiliation">
+        Title<br>
+        Department<br>
+        Laboratory or Institute<br>
+        University
+      </p>
+    </article>
+
+    <article class="card speaker">
+      <img class="speaker-photo"
+           src="assets/images/speakers/placeholder.svg"
+           alt="Teaching staff member three headshot" />
+
+      <h3>Instructor Three</h3>
+
+      <p class="speaker-affiliation">
+        Title<br>
+        Department<br>
+        Laboratory or Institute<br>
+        University
+      </p>
+    </article>
+
+  </div>
+</section>
+
+    <section id="setup" class="section">
+      <h2>Setup</h2>
+      <p>
+        Participants can run all examples directly in Google Colab. For local execution, clone the repository
+        and install the Python dependencies below.
+      </p>
+      <pre><code>git clone https://github.com/YOUR-ORG/RL-for-Roboracer.git
+cd RL-for-Roboracer
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt</code></pre>
+      <p class="note">
+        Deployment on the physical vehicle additionally requires ROS 2 and the Roboracer system stack on the onboard computer.
+      </p>
+    </section>
+
+    <section id="references" class="section alt">
+      <h2>References and resources</h2>
+      <ul class="resource-list">
+        <li><a href="https://roboracer.ai/" target="_blank" rel="noopener">Roboracer</a> &mdash; the 1:10 scale autonomous racing platform and community (formerly F1TENTH).</li>
+        <li><a href="https://github.com/f1tenth/f1tenth_gym" target="_blank" rel="noopener">Roboracer Gym</a> &mdash; the simulation environment used throughout the tutorial.</li>
+        <li><a href="https://f1tenth-coursekit.readthedocs.io/" target="_blank" rel="noopener">Roboracer Course Kit</a> &mdash; lectures and labs on the full autonomy stack.</li>
+        <li><a href="https://gymnasium.farama.org/" target="_blank" rel="noopener">Gymnasium</a> &mdash; the standard API for reinforcement learning environments.</li>
+        <li><a href="https://stable-baselines3.readthedocs.io/" target="_blank" rel="noopener">Stable-Baselines3</a> &mdash; reference implementations of PPO, SAC, and related algorithms.</li>
+      </ul>
+    </section>
+  </main>
+
+  <section class="section acknowledgments">
+  <h2>Acknowledgments</h2>
+</section>
+
+  <footer class="footer">
+    <p>&copy; 2026 RL for Roboracer. Built with a lightweight academic project page template.</p>
+  </footer>
+</body>
+</html>
