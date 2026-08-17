@@ -65,7 +65,6 @@ slide deck, and one or more Colab notebooks (Materials section).
 
 | Where | What |
 | --- | --- |
-| `index.html` | `YOUR-ORG/RL-for-Roboracer` — GitHub button, Colab links, setup clone command |
 | `index.html` | `VIDEO_ID_MODULE_1` / `VIDEO_ID_MODULE_2` — uncomment the `<iframe>` blocks in the Recordings section and delete the `video-placeholder` divs; add a Module 3 embed once that recording exists |
 | `index.html` | `YOUR-CHANNEL` — the course's YouTube channel link on the Module 3 card |
 | `index.html` | Teaching staff names, titles, and affiliations |
