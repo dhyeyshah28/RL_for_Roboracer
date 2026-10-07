@@ -6,6 +6,9 @@
   <meta name="description" content="Tutorial on Reinforcement Learning for Roboracer: autonomous racing from simulation to the physical 1:10 scale vehicle." />
   <meta name="keywords" content="Reinforcement Learning, Roboracer, F1TENTH, Autonomous Racing, Sim-to-Real, Model Predictive Control, Robot Learning, ROS 2" />
   <title>RL for Roboracer | Reinforcement Learning for Autonomous Racing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <script>
@@ -22,40 +25,128 @@ window.MathJax = {
 </script>
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <a class="brand" href="#top">RL for Roboracer</a>
-      <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#recordings">Recordings</a>
-        <a href="#materials">Materials</a>
-        <a href="#speakers">Teaching Staff</a>
-        <a href="#setup">Setup</a>
-        <a href="#references">References</a>
-      </div>
-    </nav>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5.2c2-1.1 4.4-1.1 6.3 0v13.6c-1.9-1.1-4.3-1.1-6.3 0V5.2Z"/>
+      <path d="M20 5.2c-2-1.1-4.4-1.1-6.3 0v13.6c1.9-1.1 4.3-1.1 6.3 0V5.2Z"/>
+    </symbol>
+    <symbol id="icon-slides" viewBox="0 0 24 24" fill="none">
+      <rect x="3.5" y="4" width="17" height="16" rx="2" fill="#FBBC04" opacity="0.16"/>
+      <rect x="3.5" y="4" width="17" height="16" rx="2" stroke="#EA8600" stroke-width="1.5"/>
+      <rect x="6.5" y="7.2" width="11" height="6.2" rx="0.6" stroke="#EA8600" stroke-width="1.4"/>
+      <path d="M6.5 16.6h5.5M6.5 19h8" stroke="#EA8600" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-colab" viewBox="0 0 24 24" fill="none">
+      <circle cx="8.7" cy="12" r="5.3" stroke="#F9AB00" stroke-width="3.2"/>
+      <circle cx="15.3" cy="12" r="4" stroke="#E8710A" stroke-width="3.2"/>
+    </symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 8 4.5 12l4 4M15.5 8l4 4-4 4M13.5 6 10.5 18"/>
+    </symbol>
+    <symbol id="icon-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="8.4"/>
+      <path d="M10 8.7v6.6l5.6-3.3-5.6-3.3Z" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-read" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 3.5h7.4L18.5 8.6V20.5h-12V3.5Z"/>
+      <path d="M13.6 3.5V8.6h4.9"/>
+      <path d="M9 13.2h6.2M9 16.4h6.2"/>
+    </symbol>
+    <symbol id="icon-run" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.4" y="4.6" width="17.2" height="14.8" rx="2.2"/>
+      <path d="M7.3 9.6 10.4 12l-3.1 2.4"/>
+      <path d="M12.3 14.4h4.2"/>
+    </symbol>
+    <symbol id="icon-deploy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.3 15.5 5.8 10a2 2 0 0 1 1.9-1.4h8.6A2 2 0 0 1 18.2 10l1.5 5.5"/>
+      <rect x="3" y="15.5" width="18" height="3.6" rx="1.4"/>
+      <circle cx="7.6" cy="19.4" r="1.3" fill="currentColor" stroke="none"/>
+      <circle cx="16.4" cy="19.4" r="1.3" fill="currentColor" stroke="none"/>
+    </symbol>
+  </svg>
 
-    <section id="top" class="hero-content">
-      <p class="eyebrow">Roboracer Tutorial</p>
-      <h1>Reinforcement Learning for Roboracer</h1>
-      <p class="subtitle">
-        From simulation to the racetrack: a hands-on introduction to reinforcement learning for autonomous racing on the Roboracer (F1TENTH) 1:10 scale platform.
-      </p>
-      <div class="button-row">
-      <a class="button primary" href="#recordings">Watch recordings</a>
-      <a class="button" href="#materials">Slides &amp; Colab</a>
-      <a class="button"
-         href="https://github.com/dhyeyshah28/RL_for_Roboracer"
-         target="_blank"
-         rel="noopener">
-         GitHub
-      </a>
+  <header class="hero static" id="hero">
+    <div class="hero-stage">
+      <video class="hero-video" src="assets/images/RLWebsite_BG.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <div class="hero-overlay"></div>
+      <nav class="nav">
+        <a class="brand" href="#top">RL for Roboracer</a>
+        <div class="nav-links">
+          <a href="#modules">Modules</a>
+          <a href="#overview">Overview</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#recordings">Recordings</a>
+          <a href="#materials">Materials</a>
+          <a href="#speakers">Teaching Staff</a>
+          <a href="#setup">Setup</a>
+          <a href="#references">References</a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero-content">
+        <h1 class="hero-title" aria-label="Reinforcement Learning for Roboracer"><span class="hero-unit" aria-hidden="true">Reinforcement</span> <span class="hero-unit" aria-hidden="true">Learning</span> <span class="hero-unit" aria-hidden="true">for</span> <span class="hero-unit" aria-hidden="true">Roboracer</span></h1>
+        <div class="hero-desc">
+          <p class="subtitle">Hands-on RL: From Sim to Real Autonomous Racing</p>
+          <div class="button-row">
+            <a class="button primary" href="#recordings">Watch recordings</a>
+            <a class="button" href="#materials">Slides &amp; Colab</a>
+            <a class="button"
+               href="https://github.com/dhyeyshah28/RL_for_Roboracer"
+               target="_blank"
+               rel="noopener">
+               GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="scroll-hint" aria-hidden="true">Scroll</div>
     </div>
-    </section>
   </header>
 
   <main>
+    <section id="modules" class="section alt">
+      <h2>The Three Modules</h2>
+      <p>From a car that can barely stay on track to one that beats the field, each module builds on the last.</p>
+      <div class="cards three">
+        <article class="card module">
+          <div class="avatar"><span>1</span></div>
+          <h3>Learn to Drive</h3>
+          <div class="badge-row"><span class="speed-badge">FAST!</span></div>
+          <p>Train a policy from scratch, then with Stable-Baselines3, until the car laps without crashing.</p>
+          <ul>
+            <li>MDP formulation &amp; reward basics</li>
+            <li>PPO from scratch: actor-critic, GAE</li>
+            <li>Practical training with SB3</li>
+          </ul>
+        </article>
+
+        <article class="card module">
+          <div class="avatar"><span>2</span></div>
+          <h3>Learn to Race</h3>
+          <div class="badge-row"><span class="speed-badge">FASTER!!</span></div>
+          <p>Shape the reward for speed and smoothness, then deploy the policy on the real car.</p>
+          <ul>
+            <li>Reward shaping for fast, smooth laps</li>
+            <li>Sim-to-real transfer</li>
+            <li>ROS&nbsp;2 deployment on hardware</li>
+          </ul>
+        </article>
+
+        <article class="card module">
+          <div class="avatar"><span>3</span></div>
+          <h3>Learn to Win</h3>
+          <div class="badge-row"><span class="speed-badge">FASTEST!!!</span></div>
+          <p>Race against opponents: combine RL with planning and control to overtake and win.</p>
+          <ul>
+            <li>Residual policies on classical controllers</li>
+            <li>Trajectory &amp; raceline optimization</li>
+            <li>Multi-agent racing</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section id="overview" class="section">
       <h2>Overview</h2>
       <p>
@@ -63,7 +154,7 @@ window.MathJax = {
         policies as a principled extension of classical planning and control rather than a replacement for them. We frame perception, planning, and control
         as a single closed-loop decision problem in which a parametric policy maps raw LiDAR scans and odometry directly to steering and speed commands,
         while vehicle dynamics, actuator limits, and track geometry enter as explicit domain priors. Content is organized into three progressive modules
-        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>RL for Everything</strong> &mdash; each shipped as a recorded
+        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>Learn to Win</strong> &mdash; each shipped as a recorded
         lecture, a slide deck, and one or more hands-on Colab notebooks, so participants build a policy from scratch, shape it into a competitive racer, and
         see where RL fits alongside classical planning and control. Emphasis throughout is on reward design, domain randomization, and safety filtering, so
         that learned policies remain data-efficient, robust, and deployable on the physical car at the limits of handling.
@@ -74,15 +165,9 @@ window.MathJax = {
 
       <div class="graphical-abstract">
     <img
-        src="assets/images/rl_abstraction.svg"
-        alt="Reinforcement learning loop for the Roboracer platform"
+        src="assets/images/car_homepage.png"
+        alt="The Roboracer 1:10 scale car"
     />
-
-    <p class="figure-caption">
-        Perception, planning, and control are collapsed into a single closed loop in which a learned policy,
-        domain priors from vehicle dynamics and track geometry, and a domain-aware reward are optimized end-to-end
-        against the simulator and then transferred to the physical vehicle.
-    </p>
 </div>
 
 
@@ -142,7 +227,10 @@ a_t = (\delta_t,\, v_t)
 
       <div class="timeline">
         <div class="slot">
-          <div class="time">Step 1</div>
+          <div class="step-meta">
+            <div class="time">Step 1</div>
+            <div class="step-icon"><svg class="icon"><use href="#icon-watch"/></svg></div>
+          </div>
           <div class="details">
             <h3>Watch</h3>
             <p>Start with the recorded lecture for the module. It builds the intuition &mdash; why the reward is shaped the way it is, why the observation looks the way it does &mdash; before you see a single line of code.</p>
@@ -150,7 +238,10 @@ a_t = (\delta_t,\, v_t)
         </div>
 
         <div class="slot">
-          <div class="time">Step 2</div>
+          <div class="step-meta">
+            <div class="time">Step 2</div>
+            <div class="step-icon"><svg class="icon"><use href="#icon-read"/></svg></div>
+          </div>
           <div class="details">
             <h3>Read</h3>
             <p>Skim the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook.</p>
@@ -158,7 +249,10 @@ a_t = (\delta_t,\, v_t)
         </div>
 
         <div class="slot">
-          <div class="time">Step 3</div>
+          <div class="step-meta">
+            <div class="time">Step 3</div>
+            <div class="step-icon"><svg class="icon"><use href="#icon-run"/></svg></div>
+          </div>
           <div class="details">
             <h3>Run</h3>
             <p>Open the module's Colab notebook and run every cell top to bottom. No ROS installation and no prior RL experience required &mdash; each notebook explains every concept as it introduces it, and trains a policy in well under an hour on a free Colab GPU.</p>
@@ -166,7 +260,10 @@ a_t = (\delta_t,\, v_t)
         </div>
 
         <div class="slot">
-          <div class="time">Step 4</div>
+          <div class="step-meta">
+            <div class="time">Step 4</div>
+            <div class="step-icon"><svg class="icon"><use href="#icon-deploy"/></svg></div>
+          </div>
           <div class="details">
             <h3>Deploy</h3>
             <p>From Module 2 onward, take the policy you trained in simulation and run it for real, as a ROS 2 node on the physical Roboracer car.</p>
@@ -174,41 +271,6 @@ a_t = (\delta_t,\, v_t)
         </div>
       </div>
 
-      <h3 style="margin-top: 3rem; text-align: center;">The Three Modules</h3>
-      <div class="cards three">
-        <article class="card module">
-          <div class="avatar">1</div>
-          <h3>Learn to Drive</h3>
-          <p>Train a policy from scratch, then with Stable-Baselines3, until the car laps without crashing.</p>
-          <ul>
-            <li>MDP formulation &amp; reward basics</li>
-            <li>PPO from scratch: actor-critic, GAE</li>
-            <li>Practical training with SB3</li>
-          </ul>
-        </article>
-
-        <article class="card module">
-          <div class="avatar">2</div>
-          <h3>Learn to Race</h3>
-          <p>Shape the reward for speed and smoothness, then deploy the policy on the real car.</p>
-          <ul>
-            <li>Reward shaping for fast, smooth laps</li>
-            <li>Sim-to-real transfer</li>
-            <li>ROS&nbsp;2 deployment on hardware</li>
-          </ul>
-        </article>
-
-        <article class="card module">
-          <div class="avatar">3</div>
-          <h3>RL for Everything</h3>
-          <p>See where RL fits alongside classical planning and control.</p>
-          <ul>
-            <li>Residual policies on classical controllers</li>
-            <li>Trajectory &amp; raceline optimization</li>
-            <li>Multi-agent racing</li>
-          </ul>
-        </article>
-      </div>
     </section>
 
 
@@ -245,20 +307,17 @@ a_t = (\delta_t,\, v_t)
     <article class="material">
       <h3>Module 2: Learn to Race</h3>
 
-      <!-- Replace the placeholder below with the embed once the recording is live:
       <iframe
         width="100%"
         height="315"
-        src="https://www.youtube.com/embed/VIDEO_ID_MODULE_2"
+        src="https://www.youtube.com/embed/7317KTeo8LQ"
         title="RL for Roboracer — Module 2: Learn to Race"
         frameborder="0"
         allowfullscreen>
       </iframe>
-      -->
-      <div class="video-placeholder">Recording coming soon</div>
 
       <div class="link-row">
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID_MODULE_2"
+        <a href="https://youtu.be/7317KTeo8LQ"
            target="_blank"
            rel="noopener">
           Watch on YouTube
@@ -267,15 +326,22 @@ a_t = (\delta_t,\, v_t)
     </article>
 
     <article class="material">
-      <h3>Module 3: RL for Everything</h3>
+      <h3>Module 3: Learn to Win</h3>
 
-      <div class="video-placeholder">Coming soon</div>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/73EZlnmbjO8"
+        title="RL for Roboracer — Module 3: Learn to Win"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
 
       <div class="link-row">
-        <a href="https://www.youtube.com/@YOUR-CHANNEL"
+        <a href="https://youtu.be/73EZlnmbjO8"
            target="_blank"
            rel="noopener">
-          Course YouTube channel
+          Watch on YouTube
         </a>
       </div>
     </article>
@@ -289,27 +355,68 @@ a_t = (\delta_t,\, v_t)
 
       <div class="materials-grid">
         <article class="material">
-          <h3>Module 1: Learn to Drive</h3>
-          <div class="link-row">
-            <a href="slides/module1_learn_to_drive.pdf">Slides</a>
-            <a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_part1_ppo_sb3/lec1_part1_ppo_sb3.ipynb" target="_blank" rel="noopener">Colab: Training with PPO (Stable-Baselines3)</a>
-            <a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_ppo_from_scratch/lec1_ppo_from_scratch.ipynb" target="_blank" rel="noopener">Colab: PPO From Scratch (Actor-Critic, GAE, Update Rule)</a>
+          <div class="material-head">
+            <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
+            <h3>Module 1: Learn to Drive</h3>
+          </div>
+          <div class="material-dropdowns">
+          <details class="material-dropdown">
+            <summary>Slides</summary>
+            <ul class="material-list">
+              <li><a href="slides/module1_learn_to_drive.pdf"><svg class="icon link-icon"><use href="#icon-slides"/></svg>Slides</a></li>
+            </ul>
+          </details>
+          <details class="material-dropdown">
+            <summary>Notebooks</summary>
+            <ul class="material-list">
+              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_ppo_from_scratch/lec1_ppo_from_scratch.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>PPO from Scratch</a></li>
+              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module1_learn_to_drive/lec1_part1_ppo_sb3/lec1_part1_ppo_sb3.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>PPO with SB3</a></li>
+            </ul>
+          </details>
           </div>
         </article>
 
         <article class="material">
-          <h3>Module 2: Learn to Race</h3>
-          <div class="link-row">
-            <a href="slides/module2_learn_to_race.pdf">Slides</a>
-            <a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module2_learn_to_race/reward_shaping/reward_shaping.ipynb" target="_blank" rel="noopener">Colab: Reward Shaping for Racing</a>
-            <a href="https://github.com/dhyeyshah28/RL_for_Roboracer/blob/main/deployment/ppo_deploy_node.py" target="_blank" rel="noopener">ROS 2 Deployment Node (ppo_deploy_node.py)</a>
+          <div class="material-head">
+            <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
+            <h3>Module 2: Learn to Race</h3>
+          </div>
+          <div class="material-dropdowns">
+          <details class="material-dropdown">
+            <summary>Slides</summary>
+            <ul class="material-list">
+              <li><a href="slides/module2_learn_to_race.pdf"><svg class="icon link-icon"><use href="#icon-slides"/></svg>Slides</a></li>
+            </ul>
+          </details>
+          <details class="material-dropdown">
+            <summary>Notebooks</summary>
+            <ul class="material-list">
+              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module2_learn_to_race/reward_shaping/reward_shaping.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Reward Shaping</a></li>
+              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/module2_learn_to_race/domain_randomization/domain_randomization.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Action Delay &amp; Domain Randomization</a></li>
+              <li><a href="https://github.com/dhyeyshah28/RL_for_Roboracer/blob/main/deployment/ppo_deploy_node.py" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-code"/></svg>Deployment on the Car</a></li>
+            </ul>
+          </details>
           </div>
         </article>
 
         <article class="material">
-          <h3>Module 3: RL for Everything</h3>
-          <div class="link-row">
-            <span class="note">Slides and notebooks coming soon</span>
+          <div class="material-head">
+            <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
+            <h3>Module 3: Learn to Win</h3>
+          </div>
+          <div class="material-dropdowns">
+          <details class="material-dropdown">
+            <summary>Slides</summary>
+            <ul class="material-list">
+              <li><span class="note-item">Slides coming soon</span></li>
+            </ul>
+          </details>
+          <details class="material-dropdown">
+            <summary>Notebooks</summary>
+            <ul class="material-list">
+              <li><span class="note-item">Notebooks coming soon</span></li>
+            </ul>
+          </details>
           </div>
         </article>
       </div>
@@ -318,50 +425,70 @@ a_t = (\delta_t,\, v_t)
    <section id="speakers" class="section alt">
   <h2>Teaching Staff</h2>
 
-  <div class="cards three">
+  <div class="cards five">
 
     <article class="card speaker">
       <img class="speaker-photo"
-           src="assets/images/speakers/placeholder.svg"
-           alt="Teaching staff member one headshot" />
+           src="assets/images/rahul-mangharam.png"
+           alt="Rahul Mangharam headshot" />
 
-      <h3>Instructor One</h3>
+      <h3>Rahul Mangharam</h3>
 
       <p class="speaker-affiliation">
-        Title<br>
-        Department<br>
-        Laboratory or Institute<br>
-        University
+        Instructor<br>
+        Professor, Electrical and Systems Engineering<br>University of Pennsylvania
       </p>
     </article>
 
     <article class="card speaker">
       <img class="speaker-photo"
-           src="assets/images/speakers/placeholder.svg"
-           alt="Teaching staff member two headshot" />
+           src="assets/images/dhyey.jpeg"
+           alt="Dhyey Shah headshot" />
 
-      <h3>Instructor Two</h3>
+      <h3>Dhyey Shah</h3>
 
       <p class="speaker-affiliation">
-        Title<br>
-        Department<br>
-        Laboratory or Institute<br>
-        University
+        Teaching Assistant<br>
+        Robotics<br>University of Pennsylvania
       </p>
     </article>
 
     <article class="card speaker">
       <img class="speaker-photo"
-           src="assets/images/speakers/placeholder.svg"
-           alt="Teaching staff member three headshot" />
+           src="assets/images/cedric.jpg"
+           alt="Cedric Hollande headshot" />
 
-      <h3>Instructor Three</h3>
+      <h3>Cedric Hollande</h3>
 
       <p class="speaker-affiliation">
-        Title<br>
-        Department<br>
-        Laboratory or Institute<br>
-        University
+        Teaching Assistant<br>
+        Mechanical Engineering and Applied Mechanics<br>University of Pennsylvania
+      </p>
+    </article>
+
+    <article class="card speaker">
+      <img class="speaker-photo"
+           src="assets/images/mansi.jpg"
+           alt="Mansi Shekhar headshot" />
+
+      <h3>Mansi Shekhar</h3>
+
+      <p class="speaker-affiliation">
+        Teaching Assistant<br>
+        Robotics<br>University of Pennsylvania
+      </p>
+    </article>
+
+    <article class="card speaker">
+      <img class="speaker-photo"
+           src="assets/images/milan.jpg"
+           alt="Milan Manoj headshot" />
+
+      <h3>Milan Manoj</h3>
+
+      <p class="speaker-affiliation">
+        Teaching Assistant<br>
+        Robotics<br>University of Pennsylvania
       </p>
     </article>
 
@@ -396,12 +523,102 @@ pip install -r requirements.txt</code></pre>
     </section>
   </main>
 
-  <section class="section acknowledgments">
-  <h2>Acknowledgments</h2>
-</section>
 
   <footer class="footer">
     <p>&copy; 2026 RL for Roboracer. Built with a lightweight academic project page template.</p>
   </footer>
+  <script>
+    // Scroll-driven hero, after roboracer.ai's HeroChapter: while the
+    // stage is pinned, the video pushes in and darkens, the title words
+    // rise in one by one, then the tagline fades in; on exit it all fades.
+    (function () {
+      var hero = document.getElementById('hero');
+      if (!hero) return;
+      var title = hero.querySelector('.hero-title');
+      var units = Array.prototype.slice.call(hero.querySelectorAll('.hero-unit'));
+
+      // Share one gradient across all words so it sweeps the whole line.
+      function layoutGradient() {
+        var w = title.scrollWidth;
+        units.forEach(function (u) {
+          u.style.backgroundSize = w + 'px 100%';
+          u.style.backgroundPosition = -u.offsetLeft + 'px 0';
+        });
+      }
+      window.addEventListener('resize', layoutGradient);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutGradient);
+      layoutGradient();
+
+      hero.classList.remove('static');
+      layoutGradient();
+
+      var video = hero.querySelector('.hero-video');
+      var overlay = hero.querySelector('.hero-overlay');
+      var desc = hero.querySelector('.hero-desc');
+      var hint = hero.querySelector('.scroll-hint');
+
+      function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+      function seg(p, a, b) { return clamp((p - a) / (b - a)); }
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+      var target = 0, shown = 0, exitT = 0, exitShown = 0, running = false;
+
+      function measure() {
+        var vh = window.innerHeight;
+        var top = hero.getBoundingClientRect().top + window.scrollY;
+        var travel = hero.offsetHeight - vh;
+        target = clamp((window.scrollY - top) / travel);
+        exitT = clamp((window.scrollY - top - travel) / vh);
+      }
+
+      function render() {
+        var p = shown, q = exitShown;
+        var wide = window.innerWidth >= 768;
+
+        video.style.transform = 'scale(' + (1 + 0.12 * p) + ')';
+        overlay.style.opacity = (0.4 + 0.4 * seg(p, 0.08, 0.45) + 0.22 * seg(q, 0, 0.6)).toFixed(3);
+
+        var n = units.length, dur = 0.11, start = 0.1, end = 0.42;
+        var step = n > 1 ? (end - dur - start) / (n - 1) : 0;
+        units.forEach(function (u, i) {
+          var e = easeOut(seg(p, start + i * step, start + i * step + dur));
+          u.style.transform = 'translateY(' + (1 - e) * 110 + '%)';
+          u.style.opacity = e.toFixed(3);
+        });
+
+        var zoom = 1 + (wide ? 0.08 : 0.04) * easeInOut(seg(p, 0.1, 0.42));
+        var fade = 1 - easeInOut(seg(q, 0.22, 0.62));
+        title.style.transform = 'scale(' + zoom + ')';
+        title.style.opacity = fade.toFixed(3);
+        desc.style.opacity = (seg(p, 0.38, 0.46) * fade).toFixed(3);
+        desc.style.visibility = p < 0.38 ? 'hidden' : 'visible';
+        hint.style.opacity = (1 - seg(p, 0, 0.05)).toFixed(3);
+      }
+
+      // Ease the displayed progress toward the scroll position (like a
+      // GSAP scrub) so the motion stays smooth under wheel steps.
+      function tick() {
+        shown += (target - shown) * 0.12;
+        exitShown += (exitT - exitShown) * 0.12;
+        if (Math.abs(target - shown) < 0.0005 && Math.abs(exitT - exitShown) < 0.0005) {
+          shown = target; exitShown = exitT; running = false;
+        }
+        render();
+        if (running) requestAnimationFrame(tick);
+      }
+
+      function onScroll() {
+        measure();
+        if (!running) { running = true; requestAnimationFrame(tick); }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      measure();
+      shown = target; exitShown = exitT;
+      render();
+    })();
+  </script>
 </body>
 </html>

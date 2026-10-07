@@ -55,7 +55,7 @@ section of `index.html`):
 2. **Learn to Race** — reward shaping (steering smoothness, wall proximity,
    lap completion), sim-to-real transfer, and deployment as a ROS 2 node on
    the physical car.
-3. **RL for Everything** — RL alongside classical planning and control:
+3. **Learn to Win** — RL alongside classical planning and control:
    residual policies, trajectory optimization, multi-agent racing.
 
 Each module is meant to ship as a recorded lecture (Recordings section), a
