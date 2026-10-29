@@ -63,6 +63,9 @@ window.MathJax = {
       <circle cx="7.6" cy="19.4" r="1.3" fill="currentColor" stroke="none"/>
       <circle cx="16.4" cy="19.4" r="1.3" fill="currentColor" stroke="none"/>
     </symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.2 2 4.6 13.6a1 1 0 0 0 .8 1.6h5.1l-1.1 6.4a1 1 0 0 0 1.78.78L19.4 10.4a1 1 0 0 0-.78-1.62h-5.1l1.1-6.4A1 1 0 0 0 13.2 2Z"/>
+    </symbol>
   </svg>
 
   <header class="hero static" id="hero">
@@ -106,13 +109,13 @@ window.MathJax = {
 
   <main>
     <section id="modules" class="section alt">
-      <h2>The Three Modules</h2>
+      <h2 class="reveal-up">The Three Modules</h2>
       <p>From a car that can barely stay on track to one that beats the field, each module builds on the last.</p>
       <div class="cards three">
-        <article class="card module">
+        <article class="card module reveal">
           <div class="avatar"><span>1</span></div>
           <h3>Learn to Drive</h3>
-          <div class="badge-row"><span class="speed-badge">FAST!</span></div>
+          <div class="badge-row"><span class="speed-badge">FAST<svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
           <p>Train a policy from scratch, then with Stable-Baselines3, until the car laps without crashing.</p>
           <ul>
             <li>MDP formulation &amp; reward basics</li>
@@ -121,10 +124,10 @@ window.MathJax = {
           </ul>
         </article>
 
-        <article class="card module">
+        <article class="card module reveal">
           <div class="avatar"><span>2</span></div>
           <h3>Learn to Race</h3>
-          <div class="badge-row"><span class="speed-badge">FASTER!!</span></div>
+          <div class="badge-row"><span class="speed-badge">FASTER<svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
           <p>Shape the reward for speed and smoothness, then deploy the policy on the real car.</p>
           <ul>
             <li>Reward shaping for fast, smooth laps</li>
@@ -133,10 +136,10 @@ window.MathJax = {
           </ul>
         </article>
 
-        <article class="card module">
+        <article class="card module reveal">
           <div class="avatar"><span>3</span></div>
           <h3>Learn to Win</h3>
-          <div class="badge-row"><span class="speed-badge">FASTEST!!!</span></div>
+          <div class="badge-row"><span class="speed-badge">FASTEST<svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
           <p>Race against opponents: combine RL with planning and control to overtake and win.</p>
           <ul>
             <li>Residual policies on classical controllers</li>
@@ -148,7 +151,7 @@ window.MathJax = {
     </section>
 
     <section id="overview" class="section">
-      <h2>Overview</h2>
+      <h2 class="reveal-up">Overview</h2>
       <p>
         This course introduces reinforcement learning (RL) as a practical framework for autonomous racing on the Roboracer platform, treating learned
         policies as a principled extension of classical planning and control rather than a replacement for them. We frame perception, planning, and control
@@ -219,14 +222,14 @@ a_t = (\delta_t,\, v_t)
 
 
     <section id="roadmap" class="section alt">
-      <h2>How This Course Works</h2>
+      <h2 class="reveal-up">How This Course Works</h2>
       <p>
         Every module ships as a recorded lecture, a slide deck, and one or more
         Colab notebooks you run end to end in the browser, no local install or GPU required. Here is what to expect from each module.
       </p>
 
       <div class="timeline">
-        <div class="slot">
+        <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 1</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-watch"/></svg></div>
@@ -237,7 +240,7 @@ a_t = (\delta_t,\, v_t)
           </div>
         </div>
 
-        <div class="slot">
+        <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 2</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-read"/></svg></div>
@@ -248,7 +251,7 @@ a_t = (\delta_t,\, v_t)
           </div>
         </div>
 
-        <div class="slot">
+        <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 3</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-run"/></svg></div>
@@ -259,7 +262,7 @@ a_t = (\delta_t,\, v_t)
           </div>
         </div>
 
-        <div class="slot">
+        <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 4</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-deploy"/></svg></div>
@@ -275,7 +278,7 @@ a_t = (\delta_t,\, v_t)
 
 
     <section id="recordings" class="section alt">
-  <h2>Tutorial Recordings</h2>
+  <h2 class="reveal-up">Tutorial Recordings</h2>
 
   <p>
     Each module's lecture is recorded and posted here on YouTube.
@@ -283,7 +286,7 @@ a_t = (\delta_t,\, v_t)
 
   <div class="cards three">
 
-    <article class="material">
+    <article class="material reveal">
       <h3>Module 1: Learn to Drive</h3>
 
       <iframe
@@ -304,13 +307,13 @@ a_t = (\delta_t,\, v_t)
       </div>
     </article>
 
-    <article class="material">
+    <article class="material reveal">
       <h3>Module 2: Learn to Race</h3>
 
       <div class="video-placeholder">Tutorial coming soon</div>
     </article>
 
-    <article class="material">
+    <article class="material reveal">
       <h3>Module 3: Learn to Win</h3>
 
       <div class="video-placeholder">Tutorial coming soon</div>
@@ -320,11 +323,11 @@ a_t = (\delta_t,\, v_t)
 </section>
 
     <section id="materials" class="section">
-      <h2>Slides and notebooks</h2>
+      <h2 class="reveal-up">Slides and notebooks</h2>
       <p>Tutorial slides and coding examples in Google Colab are available below.</p>
 
       <div class="materials-grid">
-        <article class="material">
+        <article class="material reveal">
           <div class="material-head">
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 1: Learn to Drive</h3>
@@ -345,7 +348,7 @@ a_t = (\delta_t,\, v_t)
           </div>
         </article>
 
-        <article class="material">
+        <article class="material reveal">
           <div class="material-head">
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 2: Learn to Race</h3>
@@ -366,7 +369,7 @@ a_t = (\delta_t,\, v_t)
           </div>
         </article>
 
-        <article class="material">
+        <article class="material reveal">
           <div class="material-head">
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 3: Learn to Win</h3>
@@ -391,11 +394,11 @@ a_t = (\delta_t,\, v_t)
     </section>
 
    <section id="speakers" class="section alt">
-  <h2>Teaching Staff</h2>
+  <h2 class="reveal-up">Teaching Staff</h2>
 
   <div class="cards five">
 
-    <article class="card speaker">
+    <article class="card speaker reveal">
       <img class="speaker-photo"
            src="assets/images/rahul-mangharam.png"
            alt="Rahul Mangharam headshot" />
@@ -408,7 +411,7 @@ a_t = (\delta_t,\, v_t)
       </p>
     </article>
 
-    <article class="card speaker">
+    <article class="card speaker reveal">
       <img class="speaker-photo"
            src="assets/images/dhyey.jpeg"
            alt="Dhyey Shah headshot" />
@@ -421,7 +424,7 @@ a_t = (\delta_t,\, v_t)
       </p>
     </article>
 
-    <article class="card speaker">
+    <article class="card speaker reveal">
       <img class="speaker-photo"
            src="assets/images/cedric.jpg"
            alt="Cedric Hollande headshot" />
@@ -434,7 +437,7 @@ a_t = (\delta_t,\, v_t)
       </p>
     </article>
 
-    <article class="card speaker">
+    <article class="card speaker reveal">
       <img class="speaker-photo"
            src="assets/images/mansi.jpg"
            alt="Mansi Shekhar headshot" />
@@ -447,7 +450,7 @@ a_t = (\delta_t,\, v_t)
       </p>
     </article>
 
-    <article class="card speaker">
+    <article class="card speaker reveal">
       <img class="speaker-photo"
            src="assets/images/milan.jpg"
            alt="Milan Manoj headshot" />
@@ -464,7 +467,7 @@ a_t = (\delta_t,\, v_t)
 </section>
 
     <section id="setup" class="section">
-      <h2>Setup</h2>
+      <h2 class="reveal-up">Setup</h2>
       <p>
         Participants can run all examples directly in Google Colab. For local execution, clone the repository
         and install the Python dependencies below.
@@ -480,7 +483,7 @@ pip install -r requirements.txt</code></pre>
     </section>
 
     <section id="references" class="section alt">
-      <h2>References and resources</h2>
+      <h2 class="reveal-up">References and resources</h2>
       <ul class="resource-list">
         <li><a href="https://roboracer.ai/" target="_blank" rel="noopener">Roboracer</a> &mdash; the 1:10 scale autonomous racing platform and community (formerly F1TENTH).</li>
         <li><a href="https://github.com/f1tenth/f1tenth_gym" target="_blank" rel="noopener">Roboracer Gym</a> &mdash; the simulation environment used throughout the tutorial.</li>
@@ -586,6 +589,29 @@ pip install -r requirements.txt</code></pre>
       measure();
       shown = target; exitShown = exitT;
       render();
+    })();
+  </script>
+
+  <script>
+    // Fade/rise elements in as they enter the viewport. Respects
+    // reduced-motion (the CSS media query already forces them visible,
+    // so skipping the observer there is just avoiding unnecessary work).
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = document.querySelectorAll('.reveal, .reveal-up');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>
