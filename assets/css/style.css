@@ -589,7 +589,7 @@ h3 { color: var(--brand); line-height: 1.25; margin-top: 0; }
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   padding: 0.34rem 1.1rem;
-  clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 50%, 100% 100%, 0 100%, 10px 50%);
   box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
   animation: badge-pulse 2.6s ease-in-out infinite;
 }
