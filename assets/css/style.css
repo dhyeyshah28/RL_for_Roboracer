@@ -753,6 +753,27 @@ h3 { color: var(--brand); line-height: 1.25; margin-top: 0; }
   .cards.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+.cards.six { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.7rem; }
+
+.cards.six .speaker-photo {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.cards.six .speaker-affiliation { font-size: 0.8rem; }
+
+@media (max-width: 980px) {
+  .cards.six { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .cards.six { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 
 .footer {
   border-top: 1px solid var(--line);
