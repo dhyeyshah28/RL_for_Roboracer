@@ -43,10 +43,6 @@ window.MathJax = {
     <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M8.5 8 4.5 12l4 4M15.5 8l4 4-4 4M13.5 6 10.5 18"/>
     </symbol>
-    <symbol id="icon-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="8.4"/>
-      <path d="M10 8.7v6.6l5.6-3.3-5.6-3.3Z" fill="currentColor" stroke="none"/>
-    </symbol>
     <symbol id="icon-read" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M6.5 3.5h7.4L18.5 8.6V20.5h-12V3.5Z"/>
       <path d="M13.6 3.5V8.6h4.9"/>
@@ -128,10 +124,10 @@ window.MathJax = {
           <div class="avatar"><span>2</span></div>
           <h3>Learn to Race</h3>
           <div class="badge-row"><span class="speed-badge">FASTER<svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
-          <p>Shape the reward for speed and smoothness, then deploy the policy on the real car.</p>
+          <p>Shape the reward for speed, dodge static and dynamic obstacles, then deploy on the real car.</p>
           <ul>
             <li>Reward shaping for fast, smooth laps</li>
-            <li>Sim-to-real transfer</li>
+            <li>Static &amp; dynamic obstacle avoidance</li>
             <li>ROS&nbsp;2 deployment on hardware</li>
           </ul>
         </article>
@@ -140,11 +136,11 @@ window.MathJax = {
           <div class="avatar"><span>3</span></div>
           <h3>Learn to Win</h3>
           <div class="badge-row"><span class="speed-badge">FASTEST<svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
-          <p>Race against opponents: combine RL with planning and control to overtake and win.</p>
+          <p>Optimize the raceline, then combine it with the trained policy to overtake and win.</p>
           <ul>
-            <li>Residual policies on classical controllers</li>
             <li>Trajectory &amp; raceline optimization</li>
-            <li>Multi-agent racing</li>
+            <li>RL combined with classical planning</li>
+            <li>Overtaking to win the race</li>
           </ul>
         </article>
       </div>
@@ -157,8 +153,8 @@ window.MathJax = {
         policies as a principled extension of classical planning and control rather than a replacement for them. We frame perception, planning, and control
         as a single closed-loop decision problem in which a parametric policy maps raw LiDAR scans and odometry directly to steering and speed commands,
         while vehicle dynamics, actuator limits, and track geometry enter as explicit domain priors. Content is organized into three progressive modules
-        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>Learn to Win</strong> &mdash; each shipped as a recorded
-        lecture, a slide deck, and one or more hands-on Colab notebooks, so participants build a policy from scratch, shape it into a competitive racer, and
+        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>Learn to Win</strong> &mdash; each shipped as a slide
+        deck and one or more hands-on Colab notebooks, so participants build a policy from scratch, shape it into a competitive racer, and
         see where RL fits alongside classical planning and control. Emphasis throughout is on reward design, domain randomization, and safety filtering, so
         that learned policies remain data-efficient, robust, and deployable on the physical car at the limits of handling.
       </p>
@@ -224,7 +220,7 @@ a_t = (\delta_t,\, v_t)
     <section id="roadmap" class="section alt">
       <h2 class="reveal-up">How This Course Works</h2>
       <p>
-        Every module ships as a recorded lecture, a slide deck, and one or more
+        Every module ships as a slide deck and one or more
         Colab notebooks you run end to end in the browser, no local install or GPU required. Here is what to expect from each module.
       </p>
 
@@ -232,28 +228,17 @@ a_t = (\delta_t,\, v_t)
         <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 1</div>
-            <div class="step-icon"><svg class="icon"><use href="#icon-watch"/></svg></div>
+            <div class="step-icon"><svg class="icon"><use href="#icon-read"/></svg></div>
           </div>
           <div class="details">
-            <h3>Watch</h3>
-            <p>Start with the recorded lecture for the module. It builds the intuition &mdash; why the reward is shaped the way it is, why the observation looks the way it does &mdash; before you see a single line of code.</p>
+            <h3>Read</h3>
+            <p>Start with the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook.</p>
           </div>
         </div>
 
         <div class="slot reveal">
           <div class="step-meta">
             <div class="time">Step 2</div>
-            <div class="step-icon"><svg class="icon"><use href="#icon-read"/></svg></div>
-          </div>
-          <div class="details">
-            <h3>Read</h3>
-            <p>Skim the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook.</p>
-          </div>
-        </div>
-
-        <div class="slot reveal">
-          <div class="step-meta">
-            <div class="time">Step 3</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-run"/></svg></div>
           </div>
           <div class="details">
@@ -264,7 +249,7 @@ a_t = (\delta_t,\, v_t)
 
         <div class="slot reveal">
           <div class="step-meta">
-            <div class="time">Step 4</div>
+            <div class="time">Step 3</div>
             <div class="step-icon"><svg class="icon"><use href="#icon-deploy"/></svg></div>
           </div>
           <div class="details">
