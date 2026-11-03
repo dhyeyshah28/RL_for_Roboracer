@@ -105,14 +105,14 @@ a { color: var(--sv-text); }
 }
 
 .deck-tab.active {
-  color: #fff;
-  border-color: var(--sv-accent);
-  background: rgba(124, 58, 237, 0.14);
+  color: #18181b;
+  border-color: var(--sv-text);
+  background: var(--sv-text);
 }
 
 .deck-tab.active .deck-tab-num {
-  color: #fff;
-  background: var(--sv-accent);
+  color: #18181b;
+  background: rgba(24, 24, 27, 0.12);
 }
 
 .viewer-stage {
