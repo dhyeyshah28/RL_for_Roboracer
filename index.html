@@ -78,8 +78,8 @@ window.MathJax = {
           <a href="#modules">Modules</a>
           <a href="#overview">Overview</a>
           <a href="#roadmap">Roadmap</a>
-          <a href="#recordings">Recordings</a>
-          <a href="#materials">Materials</a>
+          <a href="#slides">Slides</a>
+          <a href="#materials">Notebooks</a>
           <a href="#speakers">Teaching Staff</a>
           <a href="#setup">Setup</a>
           <a href="#references">References</a>
@@ -91,8 +91,8 @@ window.MathJax = {
         <div class="hero-desc">
           <p class="subtitle">Hands-on RL: From Sim to Real Autonomous Racing</p>
           <div class="button-row">
-            <a class="button primary" href="#recordings">Watch recordings</a>
-            <a class="button" href="#materials">Slides &amp; Colab</a>
+            <a class="button primary" href="#slides">View slides</a>
+            <a class="button" href="#materials">Notebooks</a>
             <a class="button"
                href="https://github.com/dhyeyshah28/RL_for_Roboracer"
                target="_blank"
@@ -277,54 +277,45 @@ a_t = (\delta_t,\, v_t)
     </section>
 
 
-    <section id="recordings" class="section alt">
-  <h2 class="reveal-up">Tutorial Recordings</h2>
+    <section id="slides" class="section alt">
+  <h2 class="reveal-up">Tutorial Slides</h2>
 
   <p>
-    Each module's lecture is recorded and posted here on YouTube.
+    Each module's slide deck opens in the browser with its own page-by-page viewer.
   </p>
 
   <div class="cards three">
 
-    <article class="material reveal">
-      <h3>Module 1: Learn to Drive</h3>
-
-      <iframe
-        width="100%"
-        height="315"
-        src="https://www.youtube.com/embed/kTGOpzSsUBA"
-        title="RL for Roboracer — Module 1: Learn to Drive"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-
-      <div class="link-row">
-        <a href="https://youtu.be/kTGOpzSsUBA"
-           target="_blank"
-           rel="noopener">
-          Watch on YouTube
-        </a>
+    <a class="card slide-card reveal" href="slides/module1.html">
+      <div class="slide-thumb">
+        <img src="assets/slides/module1-learn-to-drive/slide-001.png" alt="Module 1: Learn to Drive — first slide" loading="lazy" />
+        <span class="slide-thumb-play"><svg class="icon"><use href="#icon-slides"/></svg>View slides</span>
       </div>
-    </article>
+      <h3>Module 1: Learn to Drive</h3>
+    </a>
 
-    <article class="material reveal">
+    <a class="card slide-card reveal" href="slides/module2.html">
+      <div class="slide-thumb">
+        <img src="assets/slides/module2-learn-to-race/slide-001.png" alt="Module 2: Learn to Race — first slide" loading="lazy" />
+        <span class="slide-thumb-play"><svg class="icon"><use href="#icon-slides"/></svg>View slides</span>
+      </div>
       <h3>Module 2: Learn to Race</h3>
+    </a>
 
-      <div class="video-placeholder">Tutorial coming soon</div>
-    </article>
-
-    <article class="material reveal">
+    <a class="card slide-card reveal" href="slides/module3.html">
+      <div class="slide-thumb">
+        <img src="assets/slides/module3-static-obstacle-avoidance/slide-001.png" alt="Module 3: Learn to Win — first slide" loading="lazy" />
+        <span class="slide-thumb-play"><svg class="icon"><use href="#icon-slides"/></svg>View slides</span>
+      </div>
       <h3>Module 3: Learn to Win</h3>
-
-      <div class="video-placeholder">Tutorial coming soon</div>
-    </article>
+    </a>
 
   </div>
 </section>
 
     <section id="materials" class="section">
-      <h2 class="reveal-up">Slides and notebooks</h2>
-      <p>Tutorial slides and coding examples in Google Colab are available below.</p>
+      <h2 class="reveal-up">Interactive Notebooks</h2>
+      <p>Run every module's code end to end in Google Colab &mdash; no local install or GPU required.</p>
 
       <div class="materials-grid">
         <article class="material reveal">
@@ -332,20 +323,11 @@ a_t = (\delta_t,\, v_t)
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 1: Learn to Drive</h3>
           </div>
-          <div class="material-groups">
-          <div class="material-group">
-            <div class="material-label">Slides</div>
-            <ul class="material-list">
-              <li><a href="slides/module1_learn_to_drive.pdf"><svg class="icon link-icon"><use href="#icon-slides"/></svg>Slides</a></li>
-            </ul>
-          </div>
-          <div class="material-group">
-            <div class="material-label">Notebooks</div>
-            <ul class="material-list">
-              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/PPO_from_Scratch_LearnToDrive_Student.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>PPO from Scratch</a></li>
-            </ul>
-          </div>
-          </div>
+          <ul class="material-list">
+            <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod1_LearnToDrive.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Learn to Drive</a></li>
+            <li><a href="https://github.com/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/export_ppo_onnx.py" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-code"/></svg>Export to ONNX</a></li>
+            <li><a href="https://github.com/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/ppo_deploy_node.py" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-code"/></svg>Deployment Node</a></li>
+          </ul>
         </article>
 
         <article class="material reveal">
@@ -353,20 +335,9 @@ a_t = (\delta_t,\, v_t)
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 2: Learn to Race</h3>
           </div>
-          <div class="material-groups">
-          <div class="material-group">
-            <div class="material-label">Slides</div>
-            <ul class="material-list">
-              <li><a href="slides/module2_learn_to_race.pdf"><svg class="icon link-icon"><use href="#icon-slides"/></svg>Slides</a></li>
-            </ul>
-          </div>
-          <div class="material-group">
-            <div class="material-label">Notebooks</div>
-            <ul class="material-list">
-              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod2_LearnToRace_Student.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Reward Shaping</a></li>
-            </ul>
-          </div>
-          </div>
+          <ul class="material-list">
+            <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod2_LearnToRace.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Learn to Race</a></li>
+          </ul>
         </article>
 
         <article class="material reveal">
@@ -374,21 +345,11 @@ a_t = (\delta_t,\, v_t)
             <span class="material-icon"><svg class="icon"><use href="#icon-book"/></svg></span>
             <h3>Module 3: Learn to Win</h3>
           </div>
-          <div class="material-groups">
-          <div class="material-group">
-            <div class="material-label">Slides</div>
-            <ul class="material-list">
-              <li><span class="note-item">Slides coming soon</span></li>
-            </ul>
-          </div>
-          <div class="material-group">
-            <div class="material-label">Notebooks</div>
-            <ul class="material-list">
-              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/PPO_from_Scratch_StaticObstacleAvoidance_Student.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Static Obstacles</a></li>
-              <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/PPO_from_Scratch_DynamicObstacleAvoidance_Student.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Dynamic Obstacles</a></li>
-            </ul>
-          </div>
-          </div>
+          <ul class="material-list">
+            <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod2.1_StaticObsAvoidance.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Static Obstacles</a></li>
+            <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod2.2_DynamicObsAvoidance.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Dynamic Obstacles</a></li>
+            <li><a href="https://colab.research.google.com/github/dhyeyshah28/RL_for_Roboracer/blob/main/notebooks/Mod3.1_TrajOptimization.ipynb" target="_blank" rel="noopener"><svg class="icon link-icon"><use href="#icon-colab"/></svg>Trajectory Opt.</a></li>
+          </ul>
         </article>
       </div>
     </section>

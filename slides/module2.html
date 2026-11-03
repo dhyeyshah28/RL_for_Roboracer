@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Module 2: Learn to Race — Slides | RL for Roboracer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/slides.css?v=1" />
+</head>
+<body>
+  <header class="viewer-top">
+    <a class="back-link" href="../index.html#slides">&larr; RL for Roboracer</a>
+    <div class="viewer-heading">
+      <h1 id="moduleHeading">Module 2: Learn to Race</h1>
+      <p class="deck-title" id="deckTitle"></p>
+    </div>
+  </header>
+
+  <div class="deck-tabs" id="deckTabs"></div>
+
+  <main class="viewer-stage">
+    <button class="nav-arrow prev" id="prevBtn" aria-label="Previous slide">&#8249;</button>
+    <div class="slide-frame">
+      <img id="slideImg" src="" alt="" />
+    </div>
+    <button class="nav-arrow next" id="nextBtn" aria-label="Next slide">&#8250;</button>
+  </main>
+
+  <footer class="viewer-controls">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="viewer-meta"><span id="slideCounter"></span></div>
+  </footer>
+
+  <script src="../assets/js/slides.js?v=1"></script>
+  <script>
+    RLSlides.init({
+      moduleTitle: "Module 2: Learn to Race",
+      decks: [
+        { title: "Reward Shaping: Notebook Walkthrough", folder: "../assets/slides/module2-learn-to-race", count: 22 }
+      ]
+    });
+  </script>
+</body>
+</html>

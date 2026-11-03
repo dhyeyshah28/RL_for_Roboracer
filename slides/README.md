@@ -1,8 +1,18 @@
 # Slides
 
-Drop the course PDFs here using exactly these filenames, so the links in
-`index.html` resolve without further edits:
+Dedicated in-browser slide viewers, one per module:
 
-- `module1_learn_to_drive.pdf`
-- `module2_learn_to_race.pdf`
-- `module3_rl_for_everything.pdf` (add once Module 3 ships; also uncomment its link in `index.html`)
+- `module1.html` — Module 1: Learn to Drive
+- `module2.html` — Module 2: Learn to Race
+- `module3.html` — Module 3: Learn to Win (three decks back to back: Static
+  Obstacle Avoidance, Dynamic Obstacle Avoidance, Learn to Win)
+
+Each page is driven by `../assets/js/slides.js` and styled by
+`../assets/css/slides.css`. The slide images themselves live under
+`../assets/slides/<deck-slug>/slide-NNN.png`, exported from the source
+PowerPoint decks via `../scripts/export_slides.ps1` (PowerPoint COM
+automation; edit the `$decks` list at the top of that script to point at your
+local `.pptx` paths and re-run it with PowerPoint installed). To update a
+deck, re-export its slides to PNG into the same folder (keeping the
+`slide-001.png`, `slide-002.png`, ... naming) and update the `count` for that
+deck in the relevant `moduleN.html` file if the slide count changed.

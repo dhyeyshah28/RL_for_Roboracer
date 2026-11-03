@@ -12,12 +12,15 @@ no Jekyll theme, no build step, and no dependencies to install.
 ├── index.html                     # the entire page (all sections live here)
 ├── assets/
 │   ├── css/style.css              # the whole design system
+│   ├── css/slides.css             # dark theme for the slide-viewer pages
+│   ├── js/slides.js               # slide-viewer navigation logic
+│   ├── slides/<deck-slug>/        # slide-001.png, slide-002.png, ... per deck
 │   └── images/
 │       ├── favicon.svg
 │       ├── rl_abstraction.svg     # graphical abstract
 │       └── speakers/placeholder.svg
-├── slides/                        # PDFs linked from the Materials section
-├── notebooks/                     # notebooks the Colab links point at
+├── slides/                        # module1.html / module2.html / module3.html slide viewers
+├── notebooks/                     # notebooks (and Module 1 scripts) the Colab/GitHub links point at
 ├── requirements.txt
 ├── .nojekyll                      # serve files verbatim, no Jekyll processing
 └── .github/workflows/pages.yml    # optional GitHub Actions deploy
@@ -58,25 +61,22 @@ section of `index.html`):
 3. **Learn to Win** — RL alongside classical planning and control:
    residual policies, trajectory optimization, multi-agent racing.
 
-Each module is meant to ship as a recorded lecture (Recordings section), a
-slide deck, and one or more Colab notebooks (Materials section).
+Each module ships as an in-browser slide deck (Tutorial Slides section) and
+one or more Colab notebooks (Interactive Notebooks section).
 
 ## Placeholders to replace
 
 | Where | What |
 | --- | --- |
-| `index.html` | `VIDEO_ID_MODULE_1` / `VIDEO_ID_MODULE_2` — uncomment the `<iframe>` blocks in the Recordings section and delete the `video-placeholder` divs; add a Module 3 embed once that recording exists |
-| `index.html` | `YOUR-CHANNEL` — the course's YouTube channel link on the Module 3 card |
 | `index.html` | Teaching staff names, titles, and affiliations |
-| `index.html` | Acknowledgments section — currently heading-only; add sponsor text/links once finalized |
 | `assets/images/speakers/` | Real headshots; they are cropped to a 180 px circle, so square images look best |
-| `slides/`, `notebooks/` | The actual PDFs and notebooks — see the README in each directory for expected filenames/layout |
-| `deployment/` | Not yet created — add the ROS 2 deployment node here (`ppo_deploy_node.py`) and it will match the Module 2 link in Materials |
+| `slides/`, `assets/slides/` | Re-export a deck's PNGs to add/update slides — see `slides/README.md` |
+| `notebooks/` | The Colab notebooks and Module 1's `export_ppo_onnx.py` / `ppo_deploy_node.py` scripts the Materials section links to |
 
 ## Editing notes
 
 - Section order and the nav links at the top of `index.html` must be kept in
-  sync — the nav is anchor-based (`#overview`, `#roadmap`, `#recordings`,
+  sync — the nav is anchor-based (`#overview`, `#roadmap`, `#slides`,
   `#materials`, `#speakers`, `#setup`, `#references`).
 - Alternating background bands come from the `section alt` class; keep them
   alternating as you add or remove sections.
