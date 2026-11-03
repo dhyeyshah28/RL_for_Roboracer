@@ -5,8 +5,8 @@ $ErrorActionPreference = "Stop"
 $decks = @(
   @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE1_ Learn to Drive.pptx"; Out = "C:\xLab\assets\slides\module1-learn-to-drive" },
   @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE2_ Learn to Race.pptx"; Out = "C:\xLab\assets\slides\module2-learn-to-race" },
-  @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE2.1_ Static Obstacle Avoidance.pptx"; Out = "C:\xLab\assets\slides\module3-static-obstacle-avoidance" },
-  @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE2.2_ Dynamic Obstacle Avoidance.pptx"; Out = "C:\xLab\assets\slides\module3-dynamic-obstacle-avoidance" },
+  @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE2.1_ Static Obstacle Avoidance.pptx"; Out = "C:\xLab\assets\slides\module2-static-obstacle-avoidance" },
+  @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE2.2_ Dynamic Obstacle Avoidance.pptx"; Out = "C:\xLab\assets\slides\module2-dynamic-obstacle-avoidance" },
   @{ Path = "C:\Users\dhyey\OneDrive\Desktop\FinalNBs\PPTFINAL\MODULE3.1_ Learn to Win.pptx"; Out = "C:\xLab\assets\slides\module3-learn-to-win" }
 )
 

@@ -3,9 +3,9 @@
 Dedicated in-browser slide viewers, one per module:
 
 - `module1.html` — Module 1: Learn to Drive
-- `module2.html` — Module 2: Learn to Race
-- `module3.html` — Module 3: Learn to Win (three decks back to back: Static
-  Obstacle Avoidance, Dynamic Obstacle Avoidance, Learn to Win)
+- `module2.html` — Module 2: Learn to Race (three decks back to back: Learn
+  to Race, Static Obstacle Avoidance, Dynamic Obstacle Avoidance)
+- `module3.html` — Module 3: Learn to Win (Trajectory Optimization)
 
 Each page is driven by `../assets/js/slides.js` and styled by
 `../assets/css/slides.css`. The slide images themselves live under
