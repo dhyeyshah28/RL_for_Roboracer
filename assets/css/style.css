@@ -578,6 +578,22 @@ h3 { color: var(--brand); line-height: 1.25; margin-top: 0; }
 
 .badge-row { text-align: center; margin: 0.1rem 0 1rem; }
 
+.module-gif {
+  margin-top: 1.1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(46, 16, 101, 0.14);
+}
+
+.module-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .speed-badge {
   display: inline-flex;
   align-items: center;
