@@ -89,7 +89,16 @@
           var btn = document.createElement("button");
           btn.type = "button";
           btn.className = "deck-tab";
-          btn.textContent = deck.tabLabel || deck.title;
+          if (deck.num) {
+            var numEl = document.createElement("span");
+            numEl.className = "deck-tab-num";
+            numEl.textContent = deck.num;
+            btn.appendChild(numEl);
+          }
+          var labelEl = document.createElement("span");
+          labelEl.className = "deck-tab-label";
+          labelEl.textContent = deck.tabLabel || deck.title;
+          btn.appendChild(labelEl);
           btn.addEventListener("click", function () {
             var firstIndex = -1;
             for (var j = 0; j < slides.length; j++) {

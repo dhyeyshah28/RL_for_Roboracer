@@ -136,11 +136,11 @@ window.MathJax = {
           <div class="avatar"><span>3</span></div>
           <h3>Learn to Win</h3>
           <div class="badge-row"><span class="speed-badge">FASTEST<svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg><svg class="icon bolt"><use href="#icon-bolt"/></svg></span></div>
-          <p>Optimize the raceline, then combine it with the trained policy to overtake and win.</p>
+          <p>Optimize the raceline, learn residual policies on classical controllers, and see RL for everything.</p>
           <ul>
             <li>Trajectory &amp; raceline optimization</li>
-            <li>RL combined with classical planning</li>
-            <li>Overtaking to win the race</li>
+            <li>Residual policies on classical controllers</li>
+            <li>RL beyond racing</li>
           </ul>
         </article>
       </div>
@@ -152,11 +152,11 @@ window.MathJax = {
         This course introduces reinforcement learning (RL) as a practical framework for autonomous racing on the Roboracer platform, treating learned
         policies as a principled extension of classical planning and control rather than a replacement for them. We frame perception, planning, and control
         as a single closed-loop decision problem in which a parametric policy maps raw LiDAR scans and odometry directly to steering and speed commands,
-        while vehicle dynamics, actuator limits, and track geometry enter as explicit domain priors. Content is organized into three progressive modules
-        &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>Learn to Win</strong> &mdash; each shipped as a slide
-        deck and one or more hands-on Colab notebooks, so participants build a policy from scratch, shape it into a competitive racer, and
-        see where RL fits alongside classical planning and control. Emphasis throughout is on reward design, domain randomization, and safety filtering, so
-        that learned policies remain data-efficient, robust, and deployable on the physical car at the limits of handling.
+        while vehicle dynamics, actuator limits, and track geometry enter as explicit domain priors. The course content is organized into three progressive
+        modules &mdash; <strong>Learn to Drive</strong>, <strong>Learn to Race</strong>, and <strong>Learn to Win</strong> &mdash; each shipped as a slide
+        deck and one or more hands-on Colab notebooks, so you build a policy from scratch, shape it into a competitive racer, and deploy it on the
+        physical Roboracer car. Emphasis throughout is on reward design, domain randomization, and safety filtering, so that learned policies stay
+        data-efficient, robust, and deployable on real hardware &mdash; the same ideas that carry over to RL applications well beyond racing.
       </p>
 
 
@@ -232,7 +232,7 @@ a_t = (\delta_t,\, v_t)
           </div>
           <div class="details">
             <h3>Read</h3>
-            <p>Start with the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook.</p>
+            <p>Start with the slide deck for the formal treatment: the MDP formulation, the network architecture, and the exact PPO update rule used in the notebook. The deck also gives a simple, section-by-section walkthrough of the notebook, so you know what each part does before you run it.</p>
           </div>
         </div>
 

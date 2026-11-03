@@ -67,30 +67,52 @@ a { color: var(--sv-text); }
 .deck-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.4rem;
-  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
   border-bottom: 1px solid var(--sv-line);
 }
 
 .deck-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 650;
   color: var(--sv-muted);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 0.75rem 0.1rem 0.65rem;
-  margin-bottom: -1px;
+  background: var(--sv-panel);
+  border: 1px solid var(--sv-line);
+  border-radius: 9px;
+  padding: 0.55rem 1.05rem;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 
-.deck-tab:hover { color: var(--sv-text); }
+.deck-tab-num {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--sv-muted);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  padding: 0.15rem 0.4rem;
+}
+
+.deck-tab:hover {
+  color: var(--sv-text);
+  border-color: #3a3a40;
+}
 
 .deck-tab.active {
-  color: var(--sv-text);
-  border-bottom-color: var(--sv-accent);
+  color: #fff;
+  border-color: var(--sv-accent);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.deck-tab.active .deck-tab-num {
+  color: #fff;
+  background: var(--sv-accent);
 }
 
 .viewer-stage {
