@@ -438,21 +438,17 @@ a_t = (\delta_t,\, v_t)
     <section id="setup" class="section">
       <h2 class="reveal-up">Setup</h2>
       <p>
-        You can run every notebook directly in Google Colab &mdash; no local install needed. If you'd rather work
-        locally, clone the repository and install the Python dependencies below.
+        Everything runs directly in Google Colab &mdash; no local install, no GPU, and no setup required. Each
+        module's notebook link above opens ready to run, top to bottom.
       </p>
-      <pre><code>git clone https://github.com/dhyeyshah28/RL_for_Roboracer.git
-cd RL_for_Roboracer
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt</code></pre>
       <p>
-        <code>notebooks/</code> holds the Colab notebooks plus Module 1's <code>export_ppo_onnx.py</code> and
-        <code>ppo_deploy_node.py</code> scripts; <code>slides/</code> holds the in-browser slide deck for each module.
+        Module 1 also includes <code>export_ppo_onnx.py</code> and <code>ppo_deploy_node.py</code>, the scripts
+        for exporting a trained policy and running it on the car, and every module has a matching in-browser
+        slide deck above.
       </p>
       <p class="note">
         Deploying a trained policy on the physical car additionally requires ROS&nbsp;2 and the Roboracer system
-        stack on the onboard computer &mdash; see <code>notebooks/ppo_deploy_node.py</code> for the deployment node.
+        stack on the onboard computer &mdash; see <code>ppo_deploy_node.py</code> for the deployment node.
       </p>
     </section>
 
